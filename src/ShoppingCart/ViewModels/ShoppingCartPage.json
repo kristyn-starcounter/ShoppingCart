@@ -1,0 +1,28 @@
+{
+  "Html": "/ShoppingCart/views/ShoppingCartPage.html",
+  "ShoppingCartItems": [
+    {
+      "Cart": { "SessionId": "" },
+      "CartItem": {
+        "ItemName": "",
+        "ItemPrice": 0
+      },
+      "ItemQuantity$": 0,
+      "RemoveItemTrigger$": 0
+    }
+  ],
+  "Items": [
+    {
+      "ItemName": "",
+      "ItemPrice": 0
+    }
+  ],
+  "TotalPrice": 0,
+  "TotalItems": 0,
+
+  "SelectedItem$": "",
+  "SelectedItemName":  "",
+  "AddItemTrigger$": 0,
+  "ClearAllItemsTrigger$": 0
+
+}

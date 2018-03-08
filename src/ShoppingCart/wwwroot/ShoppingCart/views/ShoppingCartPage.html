@@ -1,0 +1,58 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+<!--
+    <dom-bind><template is="dom-bind"> is a Polymer 2 auto-binding template
+    with a compatibility fallback for Polymer 1. See:
+    https://www.polymer-project.org/2.0/docs/devguide/templates
+-->
+<template>
+    <dom-bind>
+        <template is="dom-bind">
+            <h1 style="margin-left:20px" slot="shoppingcart/table-heading" class="kitchensink-heading-1">Your Shopping Cart</h1>
+            <p style="margin-left:20px" slot="shoppingcart/table-description">Below is a summary of your selected items.  You can add more by selecting from the dropdown below.</p>
+            <table slot="shoppingcart/table-table" class="table table-striped" style="width: 50%; margin-left:20px">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template is="dom-repeat" items="{{model.ShoppingCartItems}}">
+                        <tr>
+                            <td>{{item.CartItem.ItemName}}</td>
+                            <td>{{item.CartItem.ItemPrice}}</td>
+                            <td style="width:50px"><input type="number" value="{{item.ItemQuantity$::input}}" style="width:45px"></td>
+                            <td style="width:40px"><button style="height:20px; font-size:10px; vertical-align:middle; padding-bottom:0px; padding-top:0px" value="{{item.RemoveItemTrigger$::click}}" onmousedown="++this.value">Remove</button></td>
+                        </tr>
+                    </template>
+                    <tr style="font-weight:900; border-top:thick; color:darkslategray">
+                        <td>Totals</td>
+                        <td>{{model.TotalPrice}}</td>
+                        <td>{{model.TotalItems}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div slot="shoppingcart/dropdown-items-dropdown-div">
+                <select slot="shoppingcart/dropdown-items-dropdown" value="{{model.SelectedItem$::change}}" style="margin-left: 20px; width:200px">
+                    <template is="dom-repeat" items="{{model.Items}}">
+                        <option value="{{item.ItemName}}">{{item.ItemName}}</option>
+                    </template>
+                </select>
+                <button value="{{model.AddItemTrigger$::click}}" onmousedown="++this.value">Add Item</button>
+                <h2 slot="shoppingcart/dropdown-items-result">     {{model.ItemString}}</h2>
+                <button style="margin-left: 20px; color:red" value="{{model.ClearAllItemsTrigger$::click}}" onmousedown="++this.value">Clear All Items</button>
+            </div>        
+        </template>
+    </dom-bind>
+    <template is="declarative-shadow-dom">
+        <slot name="shoppingcart/table-heading"></slot>
+        <slot name="shoppingcart/table-description"></slot>
+        <slot name="shoppingcart/table-table"></slot>
+        <slot name="shoppingcart/dropdown-items-dropdown-div"></slot>
+        <slot name="shoppingcart/dropdown-items-dropdown"></slot>
+        <slot name="shoppingcart/dropdown-items-result"></slot>
+    </template>
+</template>
