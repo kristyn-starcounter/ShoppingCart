@@ -18,10 +18,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <template is="dom-repeat" items="{{model.ShoppingCartItems}}">
+                    <template is="dom-repeat" items="{{model.CartItems}}">
                         <tr>
-                            <td>{{item.CartItem.ItemName}}</td>
-                            <td>{{item.CartItem.ItemPrice}}</td>
+                            <td>{{item.Item.ItemName}}</td>
+                            <td>{{item.Item.ItemPrice}}</td>
                             <td style="width:50px"><input type="number" value="{{item.ItemQuantity$::input}}" style="width:45px"></td>
                             <td style="width:40px"><button style="height:20px; font-size:10px; vertical-align:middle; padding-bottom:0px; padding-top:0px" value="{{item.RemoveItemTrigger$::click}}" onmousedown="++this.value">Remove</button></td>
                         </tr>

@@ -1,0 +1,15 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <dom-bind>
+        <template is="dom-bind">
+            <div style="display:inline-block" slot="shoppingcart/dropdown">
+                <input type="number" value="{{model.Quantity$::input}}" />
+                <button onmousedown="++this.value" value="{{model.ClickTrigger$::click}}">Add To Cart</button>
+            </div>
+        </template>
+    </dom-bind>
+    <template is="declarative-shadow-dom">
+        <slot name="shoppingcart/dropdown"></slot>
+    </template>
+</template>

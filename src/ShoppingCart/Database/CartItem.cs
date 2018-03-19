@@ -4,10 +4,10 @@ using System;
 namespace ShoppingCart
 {
     [Database]
-    public class ShoppingCartItem
+    public class CartItem
     {
-        public ShoppingCart Cart { get; set; }
-        public Item CartItem { get; set; }
+        public Cart Cart { get; set; }
+        public Item Item { get; set; }
         public decimal ItemQuantity { get; set; }
     }
 }

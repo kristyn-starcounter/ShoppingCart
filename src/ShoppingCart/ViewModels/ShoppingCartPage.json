@@ -1,13 +1,13 @@
 {
   "Html": "/ShoppingCart/views/ShoppingCartPage.html",
-  "ShoppingCartItems": [
+  "CartItems": [
     {
-      "Cart": { "SessionId": "" },
-      "CartItem": {
+      "Cart": { "SessionId": 0 },
+      "Item": {
         "ItemName": "",
         "ItemPrice": 0
       },
-      "ItemQuantity$": 0,
+      "ItemQuantity$": 0.0,
       "RemoveItemTrigger$": 0
     }
   ],

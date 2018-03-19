@@ -10,7 +10,7 @@ namespace ShoppingCart
         public string ItemName { get; set; }
         public decimal ItemPrice { get; set; }
 
-        public IEnumerable<ShoppingCartItem> ShoppingCarts =>
-            Db.SQL<ShoppingCartItem>("SELECT s.Cart FROM ShoppingCartItem WHERE s.CartItem = ?", this);
+        public IEnumerable<CartItem> ShoppingCarts =>
+            Db.SQL<CartItem>("SELECT s.Cart FROM ShoppingCartItem WHERE s.CartItem = ?", this);
     }
 }
